@@ -1,0 +1,41 @@
+{
+  "name": "Chapter",
+  "type": "object",
+  "properties": {
+    "story_id": {
+      "type": "string",
+      "description": "ID of the parent story"
+    },
+    "chapter_number": {
+      "type": "number",
+      "description": "Chapter number/order"
+    },
+    "title": {
+      "type": "string",
+      "description": "Chapter title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full text content of the chapter"
+    }
+  },
+  "required": [
+    "story_id",
+    "chapter_number",
+    "title"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
