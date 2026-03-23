@@ -1,0 +1,46 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "story_id": {
+      "type": "string",
+      "description": "ID of the story this task is for"
+    },
+    "chapter_number": {
+      "type": "number",
+      "description": "Which chapter number this task unlocks"
+    },
+    "title": {
+      "type": "string",
+      "description": "What needs to be done"
+    },
+    "description": {
+      "type": "string",
+      "description": "Details about the task"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the task is done"
+    }
+  },
+  "required": [
+    "story_id",
+    "chapter_number",
+    "title"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
